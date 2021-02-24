@@ -21,8 +21,12 @@ async function getShowsByTerm(term) {
   // ADD: Remove placeholder & make request to TVMaze search shows API.
   let userInput = getInput()
 
-
   let shows = await axios.get(`http://api.tvmaze.com/search/shows?q=${userInput}`)
+
+  let id;
+  let name;
+  let summary;
+  let img;
 
   return shows.data;
 }
